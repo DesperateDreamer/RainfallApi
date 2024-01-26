@@ -14,6 +14,7 @@ namespace RainfallApi.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Get(string stationId, [FromQuery][Range(1, 100)] int count = 10)
         {
+            return Ok();
         }
     }
 }
