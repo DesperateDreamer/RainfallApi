@@ -1,3 +1,4 @@
+using RainfallApi.Middleware;
 using RainfallApi.Services;
 using RainfallApi.Services.Abstract;
 
@@ -23,6 +24,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ExceptionHandlerMiddleware>();
 
 app.UseHttpsRedirection();
 
