@@ -1,3 +1,6 @@
+using RainfallApi.Services;
+using RainfallApi.Services.Abstract;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,6 +11,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddHttpClient();
+builder.Services.AddAutoMapper(typeof(Program));
+
+builder.Services.AddScoped<IRainfallService, RainfallService>();
 
 var app = builder.Build();
 
